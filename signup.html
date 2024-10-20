@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <section>
+      <div class="signup">
+        <div class="content">
+          <h2>Sign Up</h2>
+          <form class="form" onsubmit="return signUpUser(event)">
+            <div class="inputbox">
+              <input type="text" id="firstName" required />
+              <i>First Name</i>
+            </div>
+            <div class="inputbox">
+              <input type="text" id="lastName" required />
+              <i>Last Name</i>
+            </div>
+            <div class="inputbox">
+              <input type="email" id="email" required />
+              <i>Email</i>
+            </div>
+            <div class="inputbox">
+              <input type="password" id="newPassword" required />
+              <i>New Password</i>
+            </div>
+            <div class="inputbox">
+              <input type="password" id="confirmPassword" required />
+              <i>Confirm Password</i>
+            </div>
+            <div class="inputbox">
+              <input type="submit" value="Sign Up" />
+            </div>
+            <div class="links">
+              <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script>
+      function signUpUser(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        // Get input values
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Basic validation checks
+        if (newPassword !== confirmPassword) {
+          alert("Passwords do not match. Please try again.");
+          return false;
+        }
+
+        // For demonstration, you can add user registration logic here
+        alert(`User ${firstName} ${lastName} registered successfully!`);
+        
+        // Redirect to login page
+        window.location.href = "login.html"; // Change 'login.html' to your actual login page URL
+      }
+    </script>
+  </body>
+</html>

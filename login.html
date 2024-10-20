@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Real Estate Animation</title>
+  </head>
+  <body>
+    <section>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="signin">
+        <div class="content">
+          <h2>Sign In</h2>
+          <form class="form" onsubmit="return loginUser(event)">
+            <div class="inputbox">
+              <input type="text" id="username" required />
+              <i>User name</i>
+            </div>
+            <div class="inputbox">
+              <input type="password" id="password" required />
+              <i>Password</i>
+            </div>
+            <div class="links">
+              <!-- Updated links to point to new pages -->
+              <a href="forgotpass.html">Forgot password</a>
+              <a href="signup.html">Sign up</a>
+            </div>
+            <div class="inputbox">
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script>
+      function loginUser(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        // Get the username and password input values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Basic validation check (for demonstration)
+        if (username === "admin" && password === "1234") {
+          // If the login details are correct, redirect to the home page
+          window.location.href = "homepage.html"; // Change 'homepage.html' to your actual home page URL
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>

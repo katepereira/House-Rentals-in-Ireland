@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Homepage</title>
+</head>
+<body>
+    <section class="homepage">
+        <div class="content">
+            <h1>Hello User!</h1>
+            <h2>Welcome to the Homepage</h2>
+            <p>Discover beautiful homes in Ireland!</p>
+        </div>
+        <div class="slideshow">
+            <div class="slides">
+                <img src="image1.jpeg" alt="Home in Ireland 1" />
+                <img src="house2.jpeg" alt="Home in Ireland 2" />
+                <img src="house3.jpeg" alt="Home in Ireland 3" />
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>
